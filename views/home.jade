@@ -1,0 +1,78 @@
+doctype hth4ml
+head
+    title Image Search Abstraction Layer
+    |      
+    |       
+    script(type='text/JavaScript').
+      function redirect(no){ 
+      var id = 'list' + no;
+      var str=document.getElementById(id).innerHTML; 
+      var count= document.getElementsByTagName("input")[1].value;
+      var offset= document.getElementsByTagName("input")[2].value;
+      var url = 'https://loving-shovel.glitch.me/api/' + str + '?count=' + count + '&offset='+ offset;
+      window.open(url);}
+    |    
+    meta(name='description', content='FCC API project No. 4')
+    |     
+    link#favicon(rel='icon', href='https://glitch.com/edit/favicon-app.ico', type='image/x-icon')
+    |     
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    link(rel='stylesheet', href='/style.css')
+  body
+    .container
+      header
+        h3
+          a(href='https://freecodecamp.com', target='blank') Free Code Camp
+          |  Image Search Abstraction Layer
+        |       
+        h2
+          | Backend API Project No. 4 by Franklin Griffin
+      |     
+      form(action='/', method='post')
+        input#search(type='test', name='searchStr', placeholder='Enter image search string here.')
+        |         
+        h4
+          a#countLabel Number of results to be displayed:
+        input#count(type='test', name='count', value='10')
+        | 
+        h4
+          a#offsetLabel Database Offset:
+        input#offset(type='test', name='offset', value='0')
+        | 
+        input(type='submit', value='Search')
+    h3 Ten most recently searched strings:
+  ol
+      li 
+         a#list0(href='javascript:;', onclick='redirect(0)') #{SearchData.list[0]}
+      |  
+      li 
+         a#list1(href='javascript:;', onclick='redirect(1)') #{SearchData.list[1]}
+      |  
+      li 
+         a#list2(href='javascript:;', onclick='redirect(2)') #{SearchData.list[2]}
+      |  
+      li 
+         a#list3(href='javascript:;', onclick='redirect(3)') #{SearchData.list[3]}
+      |  
+      li 
+         a#list4(href='javascript:;', onclick='redirect(4)') #{SearchData.list[4]}
+      |  
+      li 
+         a#list5(href='javascript:;', onclick='redirect(5)') #{SearchData.list[5]}
+      |  
+      li 
+         a#list6(href='javascript:;', onclick='redirect(6)') #{SearchData.list[6]}
+      |  
+      li 
+         a#list7(href='javascript:;', onclick='redirect(7)') #{SearchData.list[7]}
+      |  
+      li 
+         a#list8(href='javascript:;', onclick='redirect(8)') #{SearchData.list[8]}
+      |  
+      li 
+         a#list9(href='javascript:;', onclick='redirect(9)') #{SearchData.list[9]}
